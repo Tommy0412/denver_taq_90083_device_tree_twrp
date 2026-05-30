@@ -53,9 +53,8 @@ TARGET_BOARD_PLATFORM := rk3126c
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-#TW_THEME := portrait_hdpi
+TW_THEME := portrait_hdpi
 TW_MIN_INTERFACE := true
-TW_THEME := omni
 TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
