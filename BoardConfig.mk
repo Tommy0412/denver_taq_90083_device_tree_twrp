@@ -9,7 +9,7 @@ DEVICE_PATH := device/denver/TAQ90
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
-TARGET_ARCH := armeabi-v7a
+TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := 
