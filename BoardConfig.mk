@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-DEVICE_PATH := device/Inter Sales A/S/TAQ90
+DEVICE_PATH := device/denver/TAQ90
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
