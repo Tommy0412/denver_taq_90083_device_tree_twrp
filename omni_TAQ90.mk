@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from TAQ90 device
-$(call inherit-product, device/Inter Sales A/S/TAQ90/device.mk)
+$(call inherit-product, device/denver/TAQ90/device.mk)
 
 PRODUCT_DEVICE := TAQ90
 PRODUCT_NAME := omni_TAQ90
