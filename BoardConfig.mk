@@ -25,7 +25,7 @@ TARGET_SCREEN_DENSITY := 160
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 0
 BOARD_KERNEL_BASE := 0x10000000
-BOARD_KERNEL_CMDLINE := buildvariant=user
+BOARD_KERNEL_CMDLINE := console=ttyFIQ0 androidboot.baseband=N/A androidboot.veritymode=enforcing androidboot.hardware=rk30board androidboot.console=ttyFIQ0 init=/init initrd=0x62000000,0x00800000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
