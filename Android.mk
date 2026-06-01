@@ -4,9 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 LOCAL_PATH := $(call my-dir)
-
 ifeq ($(TARGET_DEVICE),TAQ90)
-
-# Prazno - bazični minimum za prolazak parsera
-
+# bazični minimum za prolazak parsera
 endif
