@@ -1,16 +1,16 @@
 # mount point   fstype  device                                                         flags
-/system         ext4    /dev/block/platform/1021c000.dwmmc/by-name/system
-/vendor         ext4    /dev/block/platform/1021c000.dwmmc/by-name/vendor               display="Vendor";backup=1;wipeui
-/oem            ext4    /dev/block/platform/1021c000.dwmmc/by-name/oem                  display="OEM";backup=1
-/cache          ext4    /dev/block/platform/1021c000.dwmmc/by-name/cache
-/metadata       ext4    /dev/block/platform/1021c000.dwmmc/by-name/metadata
-/data           f2fs    /dev/block/platform/1021c000.dwmmc/by-name/userdata             flags=encryptable=footer
-/misc           emmc    /dev/block/platform/1021c000.dwmmc/by-name/misc
-/boot           emmc    /dev/block/platform/1021c000.dwmmc/by-name/boot
-/recovery       emmc    /dev/block/platform/1021c000.dwmmc/by-name/recovery             backup=1
-/backup         emmc    /dev/block/platform/1021c000.dwmmc/by-name/backup               display="Backup";backup=1
-/trust          emmc    /dev/block/platform/1021c000.dwmmc/by-name/trust
-/resource       emmc    /dev/block/platform/1021c000.dwmmc/by-name/resource             display="Resource";backup=1
+/system         ext4    /dev/block/platform/1021c000.dwmmc/by-name/system               flags=backup=1
+/vendor         ext4    /dev/block/platform/1021c000.dwmmc/by-name/vendor               flags=display="Vendor";backup=1;wipeui
+/oem            ext4    /dev/block/platform/1021c000.dwmmc/by-name/oem                  flags=display="OEM";backup=1
+/cache          ext4    /dev/block/platform/1021c000.dwmmc/by-name/cache                flags=backup=1;wipeui
+/metadata       ext4    /dev/block/platform/1021c000.dwmmc/by-name/metadata             flags=display="Metadata";backup=1
+/data           f2fs    /dev/block/platform/1021c000.dwmmc/by-name/userdata             flags=encryptable=footer;backup=1
+/misc           emmc    /dev/block/platform/1021c000.dwmmc/by-name/misc                 flags=backup=1
+/boot           emmc    /dev/block/platform/1021c000.dwmmc/by-name/boot                 flags=backup=1
+/recovery       emmc    /dev/block/platform/1021c000.dwmmc/by-name/recovery             flags=display="Recovery";backup=1
+/backup         emmc    /dev/block/platform/1021c000.dwmmc/by-name/backup               flags=display="Factory Backup";backup=1
+/trust          emmc    /dev/block/platform/1021c000.dwmmc/by-name/trust                flags=display="Trust";backup=1
+/resource       emmc    /dev/block/platform/1021c000.dwmmc/by-name/resource             flags=display="Resource";backup=1
 
-# Pohrana (Storage) - Emulirana unutrašnja i vanjska SD kartica
-/external_sd    vfat    /dev/block/mmcblk0p1            /dev/block/mmcblk0              display="MicroSD Card";storage;wipeui;removable
+# Vanjska SD kartica za spremanje backupa
+/external_sd    vfat    /dev/block/mmcblk0p1            /dev/block/mmcblk0              flags=display="MicroSD Card";storage;wipeui;removable
