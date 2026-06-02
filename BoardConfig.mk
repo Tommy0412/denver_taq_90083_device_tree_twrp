@@ -25,8 +25,9 @@ TARGET_SCREEN_DENSITY := 160
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 0
 BOARD_KERNEL_BASE := 0x10000000
-BOARD_KERNEL_CMDLINE := earlycon=uart8250,mmio32,0x20068000 console=ttyFIQ0 androidboot.baseband=N/A androidboot.veritymode=permissive androidboot.hardware=rk30board androidboot.console=ttyFIQ0 init=/init mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(misc),0x00008000@0x00008000(resource),0x00010000@0x00010000(kernel),0x00010000@0x00020000(boot),0x00020000@0x00030000(recovery),0x00038000@0x00050000(backup),0x00002000@0x00088000(security),0x0080000@0x0008a000(cache),0x00300000@0x0010a000(system),0x00008000@0x0040a000(metadata),0x00040000@0x00412000(vendor),0x00060000@0x00452000(oem),0x00000400@0x004B2000(frp),-@0x004B2400(userdata) storagemedia=emmc uboot_logo=0x02000000@0x9dc00000 SecureBootCheckOk=0 androidboot.selinux=permissive buildvariant=user
+BOARD_KERNEL_CMDLINE := earlycon=uart8250,mmio32,0x20068000 console=ttyFIQ0 androidboot.baseband=N/A androidboot.veritymode=permissive androidboot.hardware=rk30board androidboot.console=ttyFIQ0 mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(misc),0x00008000@0x00008000(resource),0x00010000@0x00010000(kernel),0x00010000@0x00020000(boot),0x00020000@0x00030000(recovery),0x00038000@0x00050000(backup),0x00002000@0x0088000(security),0x0080000@0x0008a000(cache),0x00300000@0x0010a000(system),0x00008000@0x0040a000(metadata),0x00040000@0x00412000(vendor),0x00060000@0x00452000(oem),0x00000400@0x004B2000(frp),-@0x004B2400(userdata) storagemedia=emmc uboot_logo=0x02000000@0x9dc00000 SecureBootCheckOk=0 androidboot.selinux=permissive
 TARGET_BUILD_VARIANT := userdebug
+BOARD_HAS_NO_SELINUX := true
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
