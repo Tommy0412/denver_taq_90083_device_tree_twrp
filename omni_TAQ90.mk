@@ -12,6 +12,15 @@ $(call inherit-product, vendor/omni/config/common.mk)
 # Inherit from TAQ90 device
 $(call inherit-product, device/denver/TAQ90/device.mk)
 
+# Kopiranje prebuilt kernela
+PRODUCT_COPY_FILES += \
+    device/denver/TAQ90/prebuilt/kernel:kernel
+
+# Automatsko skeniranje i kopiranje svega iz recovery/root mape u korijen ramdiska
+RECOVERY_ROOT_FILES := $(wildcard device/denver/TAQ90/recovery/root/*)
+PRODUCT_COPY_FILES += \
+    $(foreach f,$(RECOVERY_ROOT_FILES),$(f):root/$(notdir $(f)))
+
 PRODUCT_DEVICE := TAQ90
 PRODUCT_NAME := omni_TAQ90
 PRODUCT_BRAND := DENVER
