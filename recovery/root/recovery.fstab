@@ -1,7 +1,17 @@
-# Android fstab file for TWRP
-#<src>  <mnt_point>  <type>  <mnt_flags>  <fs_mgr_flags>
-/dev/block/by-name/system  /system  ext4  defaults  defaults
-/dev/block/by-name/cache  /cache  ext4  defaults  defaults
-/dev/block/by-name/userdata  /data  f2fs  defaults  defaults
-/dev/block/by-name/boot  /boot  emmc  defaults  defaults
-/dev/block/by-name/recovery  /recovery  emmc  defaults  defaults
+# mount point   fstype  device                                                  flags
+/system         ext4    /dev/block/by-name/system
+/vendor         ext4    /dev/block/by-name/vendor                               display="Vendor";backup=1;wipeui
+/oem            ext4    /dev/block/by-name/oem                                  display="OEM";backup=1
+/cache          ext4    /dev/block/by-name/cache
+/metadata       ext4    /dev/block/by-name/metadata
+/data           f2fs    /dev/block/by-name/userdata
+/misc           emmc    /dev/block/by-name/misc
+/boot           emmc    /dev/block/by-name/boot
+/recovery       emmc    /dev/block/by-name/recovery                             backup=1
+/backup         emmc    /dev/block/by-name/backup                               display="Backup";backup=1
+/trust          emmc    /dev/block/by-name/trust
+/resource       emmc    /dev/block/by-name/resource                             display="Resource";backup=1
+
+# Pohrana (Storage) - Unutrašnja i vanjska SD kartica
+/internal_sd    vfat    /dev/block/platform/1021c000.dwmmc/by-name/user           display="Internal Storage";storage;wipeui;embedded
+/external_sd    vfat    /dev/block/mmcblk0p1            /dev/block/mmcblk0      display="MicroSD Card";storage;wipeui;removable
