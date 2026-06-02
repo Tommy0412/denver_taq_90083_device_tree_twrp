@@ -102,7 +102,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_RECOVERY_BLANK_ON_INIT := false
 TW_ALLOW_SCREEN_BLANK := true
 PRODUCT_EXTRA_RECOVERY_KEYS :=
-TARGET_RECOVERY_FSTAB := device/denver/TAQ90/recovery/root/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/recovery.fstab
 
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 BOARD_USES_CONFIGSTRING := true
@@ -118,7 +118,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     sys.usb.config=mtp,adb
 
 
-# Emulacija unutrašnje pohrane preko data particije
 RECOVERY_SDCARD_ON_DATA := true
 TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
@@ -126,7 +125,8 @@ TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_INCLUDE_CRYPTO_FBE := false
 BOARD_HAS_NO_REAL_SDCARD := true
 
-# Zaobilazak verifikacije particija i block-protectiona
 TW_ALWAYS_RERENDER := true
 TW_HAS_NO_RECOVERY_PARTITION := false
 TW_NO_HAPTICS := true
+TW_HAS_NO_FUSE_AOSP := true
+TW_TARGET_USES_QCOM_BSP := true
