@@ -129,3 +129,4 @@ BOARD_HAS_NO_REAL_SDCARD := true
 # Zaobilazak verifikacije particija i block-protectiona
 TW_ALWAYS_RERENDER := true
 TW_HAS_NO_RECOVERY_PARTITION := false
+TW_NO_HAPTICS := true
