@@ -77,7 +77,6 @@ TW_EXCLUDE_APAT := true
 TW_EXCLUDE_ENCRYPT := true
 TW_EXCLUDE_SUPERSU := true
 TW_IGNORE_MISC_WIPE_DATA := true
-TW_EXCLUDE_DEFAULT_USB_INIT := false
 TW_INCLUDE_CRYPTO := false
 TW_INCLUDE_LIBRESETPROP := true
 TW_EXCLUDE_BASH := true
@@ -104,3 +103,16 @@ BOARD_RECOVERY_BLANK_ON_INIT := false
 TW_ALLOW_SCREEN_BLANK := true
 PRODUCT_EXTRA_RECOVERY_KEYS :=
 TARGET_RECOVERY_FSTAB := device/denver/TAQ90/recovery/root/recovery.fstab
+
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+BOARD_USES_CONFIGSTRING := true
+TW_USB_CONFIG_PATH := "/config/usb_gadget/g1"
+TARGET_CUSTOM_DISABLE_USB_CONFIGFS := false
+
+CUSTOM_ADB_VID := "0x2207"  # Rockchip Vendor ID
+CUSTOM_ADB_PID := "0x0011"  # MTP + ADB Product ID iz skripte
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    sys.usb.configfs=1 \
+    sys.usb.controller=10180000.usb \
+    sys.usb.config=mtp,adb
