@@ -103,20 +103,11 @@ BOARD_RECOVERY_BLANK_ON_INIT := false
 TW_ALLOW_SCREEN_BLANK := true
 PRODUCT_EXTRA_RECOVERY_KEYS :=
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/recovery.fstab
-
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-BOARD_USES_CONFIGSTRING := true
-TW_USB_CONFIG_PATH := "/config/usb_gadget/g1"
-TARGET_CUSTOM_DISABLE_USB_CONFIGFS := false
-
-CUSTOM_ADB_VID := "0x2207"  # Rockchip Vendor ID
-CUSTOM_ADB_PID := "0x0011"  # MTP + ADB Product ID iz skripte
-
+CUSTOM_ADB_VID := 0x2207
+CUSTOM_ADB_PID := 0x0006
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    sys.usb.configfs=1 \
-    sys.usb.controller=10180000.usb \
-    sys.usb.config=mtp,adb
-
+    sys.usb.configfs=0 \
+    sys.usb.config=adb
 
 RECOVERY_SDCARD_ON_DATA := true
 TW_INTERNAL_STORAGE_PATH := "/data/media"
