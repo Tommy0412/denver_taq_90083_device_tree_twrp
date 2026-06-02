@@ -1,17 +1,16 @@
-# mount point   fstype  device                                                  flags
-/system         ext4    /dev/block/by-name/system
-/vendor         ext4    /dev/block/by-name/vendor                               display="Vendor";backup=1;wipeui
-/oem            ext4    /dev/block/by-name/oem                                  display="OEM";backup=1
-/cache          ext4    /dev/block/by-name/cache
-/metadata       ext4    /dev/block/by-name/metadata
-/data           f2fs    /dev/block/by-name/userdata
-/misc           emmc    /dev/block/by-name/misc
-/boot           emmc    /dev/block/by-name/boot
-/recovery       emmc    /dev/block/by-name/recovery                             backup=1
-/backup         emmc    /dev/block/by-name/backup                               display="Backup";backup=1
-/trust          emmc    /dev/block/by-name/trust
-/resource       emmc    /dev/block/by-name/resource                             display="Resource";backup=1
+# mount point   fstype  device                                                         flags
+/system         ext4    /dev/block/platform/1021c000.dwmmc/by-name/system
+/vendor         ext4    /dev/block/platform/1021c000.dwmmc/by-name/vendor               display="Vendor";backup=1;wipeui
+/oem            ext4    /dev/block/platform/1021c000.dwmmc/by-name/oem                  display="OEM";backup=1
+/cache          ext4    /dev/block/platform/1021c000.dwmmc/by-name/cache
+/metadata       ext4    /dev/block/platform/1021c000.dwmmc/by-name/metadata
+/data           f2fs    /dev/block/platform/1021c000.dwmmc/by-name/userdata             flags=encryptable=footer
+/misc           emmc    /dev/block/platform/1021c000.dwmmc/by-name/misc
+/boot           emmc    /dev/block/platform/1021c000.dwmmc/by-name/boot
+/recovery       emmc    /dev/block/platform/1021c000.dwmmc/by-name/recovery             backup=1
+/backup         emmc    /dev/block/platform/1021c000.dwmmc/by-name/backup               display="Backup";backup=1
+/trust          emmc    /dev/block/platform/1021c000.dwmmc/by-name/trust
+/resource       emmc    /dev/block/platform/1021c000.dwmmc/by-name/resource             display="Resource";backup=1
 
-# Pohrana (Storage) - Unutrašnja i vanjska SD kartica
-/internal_sd    vfat    /dev/block/platform/1021c000.dwmmc/by-name/user           display="Internal Storage";storage;wipeui;embedded
-/external_sd    vfat    /dev/block/mmcblk0p1            /dev/block/mmcblk0      display="MicroSD Card";storage;wipeui;removable
+# Pohrana (Storage) - Emulirana unutrašnja i vanjska SD kartica
+/external_sd    vfat    /dev/block/mmcblk0p1            /dev/block/mmcblk0              display="MicroSD Card";storage;wipeui;removable
