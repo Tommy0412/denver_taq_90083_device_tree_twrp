@@ -87,7 +87,7 @@ DISABLE_VUSE := true
 TW_EXCLUDE_NTP := true
 TW_EXCLUDE_MTP := true
 TW_NO_RADIO_COMM := true
-BOARD_HAS_FLIPPED_SCREEN := false
+BOARD_HAS_FLIPPED_SCREEN := true
 TARGET_RECOVERY_OVERSCAN_PERCENT := 0
 TW_USE_MODEL_HARDWARE := false
 TW_SCREEN_BLANK_ON_BOOT := false
@@ -116,3 +116,16 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     sys.usb.configfs=1 \
     sys.usb.controller=10180000.usb \
     sys.usb.config=mtp,adb
+
+
+# Emulacija unutrašnje pohrane preko data particije
+RECOVERY_SDCARD_ON_DATA := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+
+TW_INCLUDE_CRYPTO_FBE := false
+BOARD_HAS_NO_REAL_SDCARD := true
+
+# Zaobilazak verifikacije particija i block-protectiona
+TW_ALWAYS_RERENDER := true
+TW_HAS_NO_RECOVERY_PARTITION := false
